@@ -12,11 +12,14 @@ for i in range (max_attempts):
     if letter in guessed_letters:
         print ("Ya has intentado con esa letra. Intenta con otra.")
         continue
-    guessed_letters.append(letter)
-    if letter in secret_word:
+    if letter == (""):
+        print ("Valor inválido. Ingrese otro. ")
+        continue
+    elif letter in secret_word:
         print ("¡Bien hecho! La letra esta en la palabra.")
     else:
         print ("Lo siento, la letra no esta en la palabra")
+    guessed_letters.append(letter)
     letters = []
     for letter in secret_word:
         if letter in guessed_letters:
